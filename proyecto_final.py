@@ -21,8 +21,8 @@ listas = {columna: df_conjugaciones[columna].tolist() for columna in columnas}
 
 # Imprimir las listas para verificar
 for columna, lista in listas.items():
-    print(f"Columna: {columna}")
-    print(lista)
+    st.write(f"Columna: {columna}")
+    st.write(lista)
     
     
 fr_quechua = st.selectbox(
