@@ -23,3 +23,8 @@ listas = {columna: df_conjugaciones[columna].tolist() for columna in columnas}
 for columna, lista in listas.items():
     print(f"Columna: {columna}")
     print(lista)
+    
+    
+fr_quechua = st.selectbox(
+    "Seleccione una conjugación en quechua:",
+   df_conjugaciones['conjugacion'])
