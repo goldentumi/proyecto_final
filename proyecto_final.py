@@ -9,11 +9,12 @@ import pandas as pd
 import streamlit as st
 
 archivo = open('conjugaciones_quechua.xlsx')
-quechua = pd.read_excel('conjugaciones_quechua.xlsx')
+
 
 st.title(':rainbow[Conjugador inverso]')
 
-df_conjugaciones = pd.ExcelFile('conjugaciones_quechua.xlsx')
+quechua = pd.ExcelFile('conjugaciones_quechua.xlsx')
+df_conjugaciones = pd.read_excel('conjugaciones_quechua.xlsx')
 
 # Dividir las columnas en listas
 columnas = df_conjugaciones.columns
