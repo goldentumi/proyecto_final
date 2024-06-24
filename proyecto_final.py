@@ -27,4 +27,4 @@ for columna, lista in listas.items():
     
 fr_quechua = st.selectbox(
     "Seleccione una conjugación en quechua:",
-   df_conjugaciones['conjugacion'])
+   df_conjugaciones['Conjugación'])
