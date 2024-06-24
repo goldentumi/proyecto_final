@@ -19,12 +19,7 @@ df_conjugaciones = pd.read_excel('conjugaciones_quechua.xlsx')
 # Dividir las columnas en listas
 columnas = df_conjugaciones.columns
 listas = {columna: df_conjugaciones[columna].tolist() for columna in columnas}
-
-# Imprimir las listas para verificar
-for columna, lista in listas.items():
-    st.write(f"Columna: {columna}")
-    st.write(lista)
-    
+  
     
 fr_quechua = st.selectbox(
     "Seleccione una conjugación en quechua:",
