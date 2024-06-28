@@ -60,7 +60,7 @@ def conjugador(base, persona, numero, tiempo):
 def descomponer_conjugacion(conjugacion):
     for base in verbos['quechua']:
         if base.endswith('y'):
-            base = base[:-1]
+            base = base
         for persona in ["primera inclusiva", "primera exclusiva", "segunda", "tercera"]:
             for numero in ["singular", "plural"]:
                 for tiempo in D.keys():
