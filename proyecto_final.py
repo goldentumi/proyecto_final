@@ -92,7 +92,7 @@ if base.endswith("y"):
 
 persona = st.selectbox("Seleccione una persona:", ["primera inclusiva", "primera exclusiva", "segunda", "tercera"])
 numero = st.selectbox("Seleccione un número:", ["singular", "plural"])
-tiempo = st.selectbox("Seleccione un tiempo:", list(D.keys()))
+tiempo = st.selectbox("Seleccione un tiempo:", ["presentesimple","presenteprogresivo", "presentehabitual", "pasadoexperimentadosimple", "pasadoexperimentadoprogresivo", "pasadoexperimentadohabitual", "pasadonoexperimentadosimple", "pasadonoexperimentadoprogresivo", "pasadonoexperimentadohabitual"])
 
 st.write("Seleccionaste:", persona, numero, tiempo)
 st.write("El verbo conjugado es:", conjugador(base, persona, numero, tiempo))
