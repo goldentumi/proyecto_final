@@ -17,10 +17,10 @@ quechua = pd.ExcelFile('conjugaciones_quechua.xlsx')
 df_conjugaciones = pd.read_excel('conjugaciones_quechua.xlsx')
 
 #Abrir todas las hojas del excel
-excel_file = pd.ExcelFile('conjugador.xlsx')
+excel_file = pd.ExcelFile('conjugaciones.xlsx')
 D = {}
 for hoja in excel_file.sheet_names:
-  df = pd.read_excel('conjugador.xlsx', sheet_name = hoja)
+  df = pd.read_excel('conjugaciones.xlsx', sheet_name = hoja)
   c = df.columns
   df.set_index(c[0], inplace = True)
  
