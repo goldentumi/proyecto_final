@@ -59,9 +59,9 @@ def conjugador(base, persona, numero, tiempo):
 # Función para descomponer una conjugación en sus partes
 def descomponer_conjugacion(conjugacion):
     for base in verbos['quechua']:
-       # if base.endswith('y'):
-          #  base = base[:-1]
-        for persona in ["primera inclusiva", "primera exclusiva", "segunda", "tercera"]:
+      if base.endswith('y'):
+          base = base[:-1]
+          for persona in ["primera inclusiva", "primera exclusiva", "segunda", "tercera"]:
             for numero in ["singular", "plural"]:
                 for tiempo in D.keys():
                     if conjugador(base, persona, numero, tiempo) == conjugacion:
