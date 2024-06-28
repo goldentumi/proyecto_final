@@ -48,7 +48,7 @@ def color_de_fondo():
 color_de_fondo()
 
 st.title(':rainbow[Conjugador de verbos en quechua y conjugador inverso]')
-st.image('head.jpg')
+#st.image('head.jpg')
 
 # Cargar las tablas de datos
 verbos = pd.read_excel('verbos.xlsx', sheet_name='Hoja 1')
