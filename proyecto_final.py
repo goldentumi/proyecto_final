@@ -5,52 +5,10 @@ Created on Mon Jun 24 16:58:13 2024
 @author: gaby-
 """
 
-import pandas as pd
 import streamlit as st
+import pandas as pd
 
-archivo = open('conjugaciones_quechua.xlsx')
-esp = pd.read_excel('conjugaciones.xlsx')
-
-
-
-quechua = pd.ExcelFile('conjugaciones_quechua.xlsx')
-df_conjugaciones = pd.read_excel('conjugaciones_quechua.xlsx')
-
-#Abrir todas las hojas del excel
-excel_file = pd.ExcelFile('conjugaciones.xlsx')
-D = {}
-for hoja in excel_file.sheet_names:
-  df = pd.read_excel('conjugaciones.xlsx', sheet_name = hoja)
-  c = df.columns
-  df.set_index(c[0], inplace = True)
- 
-
-  d = df.to_dict()
-
-  D[hoja] = d
-# Dividir las columnas en listas
-columnas = df_conjugaciones.columns
-listas = {columna: df_conjugaciones[columna].tolist() for columna in columnas}
-  
-
-def color_de_fondo():
-    st.markdown(
-        f'''
-         <style>
-         .stApp {{
-             background-color: #FFE3E8;
-             }}
-         </style>
-         ''',
-         unsafe_allow_html=True
-         )
-
-color_de_fondo()
-
-st.title(':rainbow[Conjugador de verbos en quechua y conjugador inverso]')
-#st.image('head.jpg')
-
-# Cargar las tablas de datos
+# Cargar los archivos de datos
 verbos = pd.read_excel('verbos.xlsx', sheet_name='Hoja 1')
 quechua = pd.read_excel('quechua.xlsx')
 
@@ -70,6 +28,30 @@ col = pronombre.columns
 pronombre.set_index(col[0], inplace=True)
 d_pronombre = pronombre.to_dict()
 
+# Cargar conjugaciones de ejemplo
+df_conjugaciones = pd.read_excel('conjugaciones_quechua.xlsx')
+
+# Dividir las columnas en listas
+columnas = df_conjugaciones.columns
+listas = {columna: df_conjugaciones[columna].tolist() for columna in columnas}
+
+def color_de_fondo():
+    st.markdown(
+        f'''
+         <style>
+         .stApp {{
+             background-color: #FFE3E8;
+             }}
+         </style>
+         ''',
+         unsafe_allow_html=True
+         )
+
+color_de_fondo()
+
+st.title(':rainbow[Conjugador de verbos en quechua y conjugador inverso]')
+#st.image('head.jpg')
+
 # Función para conjugar verbos
 def conjugador(base, persona, numero, tiempo):
     return d_pronombre[numero][persona] + ' ' + base + D[tiempo][numero][persona]
@@ -77,6 +59,8 @@ def conjugador(base, persona, numero, tiempo):
 # Función para descomponer una conjugación en sus partes
 def descomponer_conjugacion(conjugacion):
     for base in verbos['quechua']:
+        if base.endswith('y'):
+            base = base[:-1]
         for persona in ["primera inclusiva", "primera exclusiva", "segunda", "tercera"]:
             for numero in ["singular", "plural"]:
                 for tiempo in D.keys():
@@ -97,11 +81,8 @@ tiempo = st.selectbox("Seleccione un tiempo:", ["presentesimple","presenteprogre
 st.write("Seleccionaste:", persona, numero, tiempo)
 st.write("El verbo conjugado es:", conjugador(base, persona, numero, tiempo))
 
-
 # Inverso: Elegir una conjugación
-conjugacion_quechua = st.selectbox(
-    "Seleccione una conjugación en quechua:",
-   df_conjugaciones['Conjugación'])
+conjugacion_quechua = st.selectbox("Seleccione una conjugación en quechua:", df_conjugaciones['Conjugación'])
 if conjugacion_quechua:
     base, persona, numero, tiempo = descomponer_conjugacion(conjugacion_quechua)
     if base and persona and numero and tiempo:
@@ -111,3 +92,4 @@ if conjugacion_quechua:
         st.write("Tiempo:", tiempo)
     else:
         st.write("No se pudo descomponer la conjugación proporcionada.")
+
