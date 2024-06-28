@@ -97,12 +97,13 @@ tiempo = st.selectbox("Seleccione un tiempo:", list(D.keys()))
 st.write("Seleccionaste:", persona, numero, tiempo)
 st.write("El verbo conjugado es:", conjugador(base, persona, numero, tiempo))
 
+
 # Inverso: Elegir una conjugación
 conjugacion_quechua = st.selectbox(
     "Seleccione una conjugación en quechua:",
    df_conjugaciones['Conjugación'])
 if conjugacion_quechua:
-    base, persona, numero, tiempo = descomponer_conjugacion(conjugacion_quechua)
+    base[:-1], persona, numero, tiempo = descomponer_conjugacion(conjugacion_quechua)
     if base and persona and numero and tiempo:
         st.write("Base del verbo:", base)
         st.write("Persona:", persona)
