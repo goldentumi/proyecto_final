@@ -60,7 +60,7 @@ def conjugador(base, persona, numero, tiempo):
 def descomponer_conjugacion(conjugacion):
     for base in verbos['quechua']:
       if base.endswith('y'):
-          base = base
+          base = base[:-1]
           for persona in ["primera inclusiva", "primera exclusiva", "segunda", "tercera"]:
             for numero in ["singular", "plural"]:
                 for tiempo in D.keys():
@@ -71,8 +71,8 @@ def descomponer_conjugacion(conjugacion):
 # Selección de verbo y conjugación
 base = st.selectbox(":violet-background[Seleccione un verbo en quechua]", list(verbos['quechua']))
 st.write("El verbo en español es:", dict(zip(verbos['quechua'], verbos['español']))[base])
-if base.endswith("y"):
-    base = base[:-1]
+#if base.endswith("y"):
+    #base = base[:-1]
 
 persona = st.selectbox("Seleccione una persona:", ["primera inclusiva", "primera exclusiva", "segunda", "tercera"])
 numero = st.selectbox("Seleccione un número:", ["singular", "plural"])
