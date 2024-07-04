@@ -55,7 +55,7 @@ def color_de_fondo():
 
 color_de_fondo()
 
-st.title(':rainbow[Conjugador de verbos en quechua]', divider = 'black')
+st.title(':rainbow[**Conjugador de verbos en quechua**]')
 #st.image('head.jpg')
 
 # Función para conjugar verbos
@@ -94,7 +94,7 @@ with st.popover (":violet-background[:violet[💭 Da click aquí para conocer m�
 st.write("Seleccionaste:", persona, numero, tiempo)
 st.write("El verbo conjugado es:", conjugador(base, persona, numero, tiempo))
 
-st.title(':rainbow[**Conjugador inverso**]', divider = 'black')
+st.title(':rainbow[**Conjugador inverso**]')
 # Inverso: Elegir una conjugación
 conjugacion_quechua = st.selectbox("Seleccione una conjugación en quechua:", df_conjugaciones['Conjugación'])
 if conjugacion_quechua:
