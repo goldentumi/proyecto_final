@@ -79,7 +79,7 @@ def descomponer_conjugacion(conjugacion):
 # Selección de verbo y conjugación
 st.subheader('**Base**', divider='rainbow')
 base = st.selectbox(":violet-background[Seleccione un verbo en quechua]", list(verbos['quechua']))
-st.write("El verbo en español es:", dict(zip(verbos['quechua'], verbos['español']))[base])
+st.write(":blue[**El verbo en español es:**]", dict(zip(verbos['quechua'], verbos['español']))[base])
 if base.endswith("y"):
     base = base[:-1]
 st.subheader('**Persona**', divider='rainbow')
@@ -92,7 +92,7 @@ d_tiempo = {'presentesimple':'El **presente simple** es equivalente a las formas
 with st.popover (":violet-background[:violet[💭 Da click aquí para conocer más sobre los tiempos.]]"):
    st.markdown(d_tiempo[tiempo])
 
-st.write(":rainbow[**Seleccionaste:**]", persona, numero, tiempo)
+st.write(":red[**Seleccionaste:**]", persona, numero, tiempo)
 st.write(":green[**El verbo conjugado es:**]", conjugador(base, persona, numero, tiempo))
 
 
@@ -100,7 +100,7 @@ st.title(':rainbow[**Conjugador inverso**]')
 # Selección de verbo en español
 verbo_espanol = st.selectbox(":violet-background[Seleccione un verbo en español:]", list(verbos['español']))
 verbo_quechua = dict(zip(verbos['español'], verbos['quechua']))[verbo_espanol]
-st.write("El verbo en quechua es:", verbo_quechua)
+st.write(":blue[**El verbo en quechua es:**]", verbo_quechua)
 
 # Selección de conjugación en quechua filtrada por el verbo en español
 conjugaciones_filtradas = df_conjugaciones[df_conjugaciones['Verbo base (español)'] == verbo_espanol]['Conjugación']
