@@ -103,7 +103,7 @@ verbo_quechua = dict(zip(verbos['español'], verbos['quechua']))[verbo_espanol]
 st.write("El verbo en quechua es:", verbo_quechua)
 
 # Selección de conjugación en quechua filtrada por el verbo en español
-conjugaciones_filtradas = df_conjugaciones[df_conjugaciones['verbo'] == verbo_espanol]['Conjugación']
+conjugaciones_filtradas = df_conjugaciones[df_conjugaciones['Verbo base (español)'] == verbo_espanol]['Conjugación']
 conjugacion_quechua = st.selectbox("Seleccione una conjugación en quechua:", conjugaciones_filtradas)
 
 # Inverso: Elegir una conjugación
