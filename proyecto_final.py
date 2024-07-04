@@ -95,6 +95,8 @@ with st.popover (":violet-background[:violet[💭 Da click aquí para conocer m�
 st.write(":red[**Seleccionaste:**]", persona, numero, tiempo)
 st.write(":green[**El verbo conjugado es:**]", conjugador(base, persona, numero, tiempo))
 
+st.divider()
+
 
 st.title(':rainbow[**Conjugador inverso**]', anchor = False)
 # Selección de verbo en español
