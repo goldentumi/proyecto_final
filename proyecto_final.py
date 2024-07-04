@@ -55,7 +55,7 @@ def color_de_fondo():
 
 color_de_fondo()
 
-st.image('head.jpg', width = 1800)
+st.image('head.jpg')
 st.title(':rainbow[**Conjugador de verbos en quechua**]', anchor = False)
 
 
