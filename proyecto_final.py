@@ -87,10 +87,10 @@ conjugacion_quechua = st.selectbox("Seleccione una conjugación en quechua:", df
 if conjugacion_quechua:
     base, persona, numero, tiempo = descomponer_conjugacion(conjugacion_quechua)
     if base and persona and numero and tiempo:
-        st.write("Base del verbo:", base)
-        st.write("Persona:", persona)
-        st.write("Número:", numero)
-        st.write("Tiempo:", tiempo)
+        st.write("**Base del verbo:**", base)
+        st.write("**Persona:**", persona)
+        st.write("**Número:**", numero)
+        st.write("**Tiempo:**", tiempo)
     else:
         st.write("No se pudo descomponer la conjugación proporcionada.")
 
