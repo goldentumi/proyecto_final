@@ -88,12 +88,12 @@ d_tiempo = {'presentesimple':'El **presente simple** es equivalente a las formas
 #with st.popover (":violet[Da click aquí para conocer más sobre los tiempos.]"):
   #  st.markdown(d_tiempo[tiempo])
 popover_content = """
-<span class="stPopover">
+<div class="stPopover">
     Da click aquí para conocer más sobre los tiempos.
-</span>
+</div>
 """
 
-st.markdown(f"<div>{d_tiempo[tiempo]}</div>", unsafe_allow_html=True)
+st.markdown(f"{d_tiempo[tiempo]}", unsafe_allow_html=True)
 st.write("Seleccionaste:", persona, numero, tiempo)
 st.write("El verbo conjugado es:", conjugador(base, persona, numero, tiempo))
 
