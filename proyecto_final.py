@@ -102,11 +102,12 @@ st.title(':rainbow[**Conjugador inverso**]', anchor = False)
 
 #¿Qué hace un conjugador inverso?
 #st.button('¿Qué es este conjugador?')
-st.button(':leftwards_arrow_with_hook:')
-if st.button('¿Qué es este conjugador?'):
-    st.write('Este :blue[**conjugador inverso**] descompone la conjugación seleccionada para que puedas conocer sus componentes :smile:')
+
+st.button('¿Qué es este conjugador?'):
+if st.button(':leftwards_arrow_with_hook:')
+   st.write('')
 else:
-    ''
+    st.write('Este :blue[**conjugador inverso**] descompone la conjugación seleccionada para que puedas conocer sus componentes :smile:')
 # Selección de verbo en español
 verbo_espanol = st.selectbox(":violet-background[Seleccione un verbo en español:]", list(verbos['español']))
 verbo_quechua = dict(zip(verbos['español'], verbos['quechua']))[verbo_espanol]
