@@ -101,7 +101,7 @@ st.divider()
 st.title(':rainbow[**Conjugador inverso**]', anchor = False)
 
 #¿Qué hace un conjugador inverso?
-st.button('¿Qué es este conjugador?')
+#st.button('¿Qué es este conjugador?')
 if st.button('¿Qué es este conjugador?'):
     st.write('Este :blue[**conjugador inverso**] descompone las conjugaciones de la lista para que puedas conocer sus componentes :smile:')
 else:
