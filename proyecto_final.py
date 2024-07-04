@@ -55,8 +55,9 @@ def color_de_fondo():
 
 color_de_fondo()
 
-st.title(':rainbow[**Conjugador de verbos en quechua**]')
 st.image('head.jpg')
+st.title(':rainbow[**Conjugador de verbos en quechua**]')
+
 
 # Función para conjugar verbos
 def conjugador(base, persona, numero, tiempo):
