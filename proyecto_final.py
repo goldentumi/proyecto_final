@@ -111,9 +111,9 @@ conjugacion_quechua = st.selectbox(":violet-background[Seleccione una conjugaci�
 if conjugacion_quechua:
     base, persona, numero, tiempo = descomponer_conjugacion(conjugacion_quechua)
     if base and persona and numero and tiempo:
-        st.write(":red[**Base del verbo:**]", base)
+        st.write(":red[**Base:**]", base)
         st.write(":orange[**Persona:**]", persona)
-        st.write(":yellow[**Número:**]", numero)
+        st.write(":blue[**Número:**]", numero)
         st.write(":green[**Tiempo:**]", tiempo)
     else:
         st.write("No se pudo descomponer la conjugación proporcionada.")
