@@ -42,12 +42,12 @@ def color_de_fondo():
          .stApp {{
              background-color: #FFE3E8;
              }}
-         .stPopover {
+         .stPopover {{
              background-color: violet;
              color: white;
              padding: 10px;
              border-radius: 10px;
-         }
+         }}
          </style>
          ''',
          unsafe_allow_html=True
