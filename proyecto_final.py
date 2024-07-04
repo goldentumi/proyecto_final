@@ -107,7 +107,7 @@ conjugaciones_filtradas = df_conjugaciones[df_conjugaciones['Verbo base (españo
 conjugacion_quechua = st.selectbox(":violet-background[Seleccione una conjugación en quechua:]", conjugaciones_filtradas)
 
 # Inverso: Elegir una conjugación
-conjugacion_quechua = st.selectbox(":violet-background[Seleccione una conjugación en quechua:]", df_conjugaciones['Conjugación'])
+#conjugacion_quechua = st.selectbox(":violet-background[Seleccione una conjugación en quechua:]", df_conjugaciones['Conjugación'])
 if conjugacion_quechua:
     base, persona, numero, tiempo = descomponer_conjugacion(conjugacion_quechua)
     if base and persona and numero and tiempo:
