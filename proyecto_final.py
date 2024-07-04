@@ -94,6 +94,7 @@ with st.popover (":violet-background[:violet[💭 Da click aquí para conocer m�
 st.write("Seleccionaste:", persona, numero, tiempo)
 st.write("El verbo conjugado es:", conjugador(base, persona, numero, tiempo))
 
+st.header('Conjugador inverso', divider = 'rainbow')
 # Inverso: Elegir una conjugación
 conjugacion_quechua = st.selectbox("Seleccione una conjugación en quechua:", df_conjugaciones['Conjugación'])
 if conjugacion_quechua:
